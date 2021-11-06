@@ -2,7 +2,7 @@
 
 ## Synonym
 
-Put your *.txt synonym files to `./synonyms dir. It will be copy to docker image
+Put your *.txt synonym files to `./synonyms` dir. It will be copy to docker image
 
 ------------
 
@@ -18,12 +18,11 @@ Put your *.txt synonym files to `./synonyms dir. It will be copy to docker image
     ```
 3. Run container
     ```console
-    $ docker run -it --rm -m 512m --cpus=2 -p 9200:9200 -e PORT=9200 -e ES_USERNAME=<your username> -e ES_PASSWORD=<your password> docker.anc.ua/elasticsearch.anc.ua:latest
+    $ docker run -it --rm -m 512m --cpus=2 -p 9200:9200 -e PORT=9200 -e ELASTIC_PASSWORD=<your username> docker.anc.ua/elasticsearch.anc.ua:latest
     ```
 **ENV:**
-- PORT - elasticsearch port;
-- ES_USERNAME - elasticsearch API username;
-- ES_PASSWORD - elasticsearch API password;
+- `PORT` - elasticsearch port;
+- `ELASTIC_PASSWORD` - elasticsearch API password (default username `elastic`);
 
 ------------
 
@@ -43,11 +42,13 @@ Put your *.txt synonym files to `./synonyms dir. It will be copy to docker image
     ```console
     $ heroku create
     ```
-5. Build and push to Container Registry
+5. Set cloud env `ELASTIC_PASSWORD`
+
+6. Build and push to Container Registry
     ```console
     $ heroku container:push web [-a <name app>]
     ```
-6. Release the image to app
+7. Release the image to app
     ```console
     $ heroku container:release web [-a <name app>]
     ```
