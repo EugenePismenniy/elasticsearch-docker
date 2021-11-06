@@ -1,4 +1,4 @@
-# Elasticsearch in docker
+# Elasticsearch with synonym files and minimal security in docker container
 
 ### How to build image and run container localy:
 
