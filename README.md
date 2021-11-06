@@ -1,6 +1,12 @@
 # Elasticsearch with synonym files and minimal security in docker container
 
-### How to build image and run container localy:
+## Synonym
+
+Put your *.txt synonym files to `./synonyms dir. It will be copy to docker image
+
+------------
+
+## How to build image and run container localy:
 
 1. Remove old image (if exists) 
     ```console
@@ -14,9 +20,14 @@
     ```console
     $ docker run -it --rm -m 512m --cpus=2 -p 9200:9200 -e PORT=9200 -e ES_USERNAME=<your username> -e ES_PASSWORD=<your password> docker.anc.ua/elasticsearch.anc.ua:latest
     ```
+**ENV:**
+- PORT - elasticsearch port;
+- ES_USERNAME - elasticsearch API username;
+- ES_PASSWORD - elasticsearch API password;
+
 ------------
 
-### How to build image and deploy container to Heroku
+## How to build image and deploy container to Heroku
 
 1. Sholud be installed Heroku CLI
 
@@ -41,7 +52,7 @@
     $ heroku container:release web [-a <name app>]
     ```
 -------------------
-### Extra commands:
+## Extra commands:
 - Remove from app
     ```console
     $ heroku container:rm [-a <name app>]
