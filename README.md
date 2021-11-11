@@ -56,7 +56,7 @@ Put your *.txt synonym files to `./synonyms` dir. It will be copy to docker imag
 ## Extra commands:
 - Remove from app
     ```console
-    $ heroku container:rm [-a <name app>]
+    $ heroku container:rm web [-a <name app>]
     ```
 - View app log
     ```console
